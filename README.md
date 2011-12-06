@@ -6,3 +6,7 @@ Roy-mode is based on [generic-mode](http://www.emacswiki.org/emacs/GenericMode "
 To install roy-mode, just add `(require 'roy-mode)` to your `.emacs` file.
 
 ![Roy mode](http://i.imgur.com/H7aC4.png)
+
+## TODO
+* Add a way to compile file to javascript from editor
+* Support indentation
