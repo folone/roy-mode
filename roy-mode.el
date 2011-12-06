@@ -50,7 +50,7 @@
     ("\\<\\(e\\(?:mpty\\|ven\\)\\|f\\(?:ilter\\|lip\\|oldl\\)\\|head\\|id\\|l\\(?:ength\\|og\\)\\|ma\\(?:p\\|ybe\\)\\|not\\|odd\\|pred\\|replicate\\|succ\\|ta\\(?:il\\|ke\\)\\)\\>" 1 'font-lock-function-name-face)
     )
   '("\\.roy$")                      ;; files for which to activate this mode 
-  nil                              ;; other functions to call
+  nil                               ;; other functions to call
   "A simple mode for roy files"     ;; doc string for this mode
   )
 
