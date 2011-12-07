@@ -1,0 +1,23 @@
+# Idea project files
+.idea
+*.iml
+*.ipr
+*.iws
+.buildpath
+.ensime
+.ensime.bak
+
+# Eclipse specific files
+.project
+.classpath
+.scala_dependencies
+# Logs
+*.log
+
+# Compiled stuff
+target
+
+# the following is for vi and emacs users
+*~
+*#
+.#*
