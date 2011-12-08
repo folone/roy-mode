@@ -34,6 +34,9 @@
     "type" "data" "else" "then" "if" "fn" "let" "true" "false")
   "Roy keywords.")
 
+;;
+;; Syntax highligh
+;;
 (define-generic-mode 'roy-mode
   '("//") ;; comments
   roy-keywords
@@ -53,6 +56,29 @@
   nil                               ;; other functions to call
   "A simple mode for roy files"     ;; doc string for this mode
   )
+
+(defcustom roy-command "roy"
+  "The CoffeeScript command used for evaluating code. Must be in your
+path."
+  :type 'string
+  :group 'roy)
+
+(defcustom roy-args-run '("-r")
+  "The command line arguments to pass to `roy-command' when running a file."
+  :type 'list
+  :group 'roy)
+
+;;
+;; Commands
+;;
+(defun roy-repl ()
+  "Launch a Roy REPL using `roy-command' as an inferior mode."
+  (interactive)
+  (unless (comint-check-proc "*RoyREPL*")
+    (set-buffer
+     (apply 'make-comint "RoyREPL"
+            roy-command nil)))
+  (pop-to-buffer "*RoyREPL*"))
 
 (provide 'roy-mode)
  ;;; roy-mode.el ends here
