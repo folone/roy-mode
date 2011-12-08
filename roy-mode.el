@@ -58,8 +58,7 @@
   )
 
 (defcustom roy-command "roy"
-  "The CoffeeScript command used for evaluating code. Must be in your
-path."
+  "The Roy command used for evaluating code. Must be in your $PATH."
   :type 'string
   :group 'roy)
 
