@@ -10,7 +10,7 @@ To install roy-mode, just add `(require 'roy-mode)` to your `.emacs` file.
 ### REPL
 You can start REPL by executing `M-x roy-repl`. If you're getting unwanted escape characters in your repl (something like `[1Groy> [0K[6G` instead of `roy>`), add `export NODE_NO_READLINE=1` to your `.bashrc` config.
 
-![Roy mode](http://i.imgur.com/K05Ec.png)
+![Roy mode](http://i.imgur.com/hf3aJ.png)
 
 ## TODO
 * Add a way to compile to javascript or run file from editor
