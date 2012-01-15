@@ -38,7 +38,7 @@
 ;; Syntax highligh
 ;;
 (define-generic-mode 'roy-mode
-  '("//") ;; comments
+  '("//.*\n") ;; comments
   roy-keywords
   '(;; fixnums
     ("[0-9]+" . 'font-lock-variable-name-face)
