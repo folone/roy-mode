@@ -1,32 +1,35 @@
 ;;; roy-mode.el --- Roy major mode
 
- ;; Copyright (C) 2011  Free Software Foundation, Inc.
+;; Version: 0.1.0
+;; URL: https://github.com/folone/roy-mode
 
- ;; Author: Georgii Leontiev
- ;; Keywords: extensions
+;; Copyright (C) 2011  Free Software Foundation, Inc.
 
- ;; This file is free software; you can redistribute it and/or modify
- ;; it under the terms of the GNU General Public License as published by
- ;; the Free Software Foundation; either version 2, or (at your option)
- ;; any later version.
+;; Author: Georgii Leontiev
+;; Keywords: extensions
 
- ;; This file is distributed in the hope that it will be useful,
- ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
- ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- ;; GNU General Public License for more details.
+;; This file is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 2, or (at your option)
+;; any later version.
 
- ;; You should have received a copy of the GNU General Public License
- ;; along with GNU Emacs; see the file COPYING.  If not, write to
- ;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- ;; Boston, MA 02111-1307, USA.
+;; This file is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
 
- ;;; Commentary:
- ;; This mode is based on generic mode
- ;; (http://www.emacswiki.org/emacs/GenericMode),
- ;; therefore, it is required.
- ;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+;; Boston, MA 02111-1307, USA.
 
- ;;; Code:
+;;; Commentary:
+;; This mode is based on generic mode
+;; (http://www.emacswiki.org/emacs/GenericMode),
+;; therefore, it is required.
+;;
+
+;;; Code:
 (require 'generic-x)
 
 (defvar roy-keywords
@@ -37,6 +40,8 @@
 ;;
 ;; Syntax highligh
 ;;
+
+;;;###autoload
 (define-generic-mode 'roy-mode
   '("//.*\n") ;; comments
   roy-keywords
@@ -52,10 +57,13 @@
     ("^\\s *let\\s +\\([^( \t\n]+\\)" 1 'font-lock-function-name-face)
     ("\\<\\(e\\(?:mpty\\|ven\\)\\|f\\(?:ilter\\|lip\\|oldl\\)\\|head\\|id\\|l\\(?:ength\\|og\\)\\|ma\\(?:p\\|ybe\\)\\|not\\|odd\\|pred\\|replicate\\|succ\\|ta\\(?:il\\|ke\\)\\)\\>" 1 'font-lock-function-name-face)
     )
-  '("\\.roy$")                      ;; files for which to activate this mode 
+  '("\\.roy$")                      ;; files for which to activate this mode
   nil                               ;; other functions to call
   "A simple mode for roy files"     ;; doc string for this mode
   )
+
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.roy$" . roy-mode))
 
 (defcustom roy-command "roy"
   "The Roy command used for evaluating code. Must be in your $PATH."
@@ -80,4 +88,5 @@
   (pop-to-buffer "*RoyREPL*"))
 
 (provide 'roy-mode)
- ;;; roy-mode.el ends here
+
+;;; roy-mode.el ends here
