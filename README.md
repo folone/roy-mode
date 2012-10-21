@@ -3,20 +3,31 @@ Roy mode is a tiny major mode for emacs. It can be used for editing [roy scripts
 
 ## Installation
 
-### Using package.el  (MELPA or Marmalade)
+### package.el installation via Marmalade or MELPA
 
 This is the easiest solution, once installed you don't have anything
 to add to your emacs config, just open a roy file and you are good to go.
 
 It can be more convenient to use Emacs's package manager to handle
 installation for you if you use many elisp libraries. If you have
-package.el but haven't added Marmalade, the community package source,
-yet, add this to you `.emacs` file:
+package.el but haven't added Marmalade or MELPA, the community package source,
+yet, add this to your `.emacs` :
+
+Using Marmalade:
 
 ```lisp
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+```
+
+Using MELPA:
+
+```lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 ```
 
@@ -32,6 +43,8 @@ If you have an older ELPA package.el installed from tromey.com, you
 should upgrade in order to support installation from multiple sources.
 The ELPA archive is deprecated and no longer accepting new packages,
 so the version there (1.7.1) is very outdated.
+
+#### Install roy-mode
 
 From there you can install roy-mode or any other modes by choosing
 them from a list:
