@@ -43,7 +43,7 @@
 
 ;;;###autoload
 (define-generic-mode 'roy-mode
-  '("//.*\n") ;; comments
+  '("//[^\r\n]*\n") ;; comments
   roy-keywords
   '(;; fixnums
     ("[0-9]+" . 'font-lock-variable-name-face)
